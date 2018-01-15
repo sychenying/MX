@@ -169,6 +169,13 @@
     <Compile Include="Manager\Dal\ColumnImgsDal.cs" />
     <Compile Include="Manager\Dal\LinksDal.cs" />
     <Compile Include="Manager\Dal\UserDal.cs" />
+    <Compile Include="Manager\Page\LinksListPG.aspx.cs">
+      <DependentUpon>LinksListPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Page\LinksListPG.aspx.designer.cs">
+      <DependentUpon>LinksListPG.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Page\LinksPG.aspx.cs">
       <DependentUpon>LinksPG.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,6 +216,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Manager\Page\LinksListPG.aspx" />
     <Content Include="Manager\Page\LinksPG.aspx" />
     <Content Include="Manager\Page\test.aspx" />
     <Content Include="Scripts\bootstrap.js" />
