@@ -14,7 +14,7 @@
             <tr>
                 <th>标题</th>
                 <th>链接地址</th>
-                <th style="width: 138px; text-align: center;">操作</th>
+                <th style="width: 150px; text-align: center;">操作</th>
             </tr>
         </thead>
         <tbody>
@@ -51,7 +51,7 @@
                 //首次不执行
                 if (!first) {
                     //do something
-                    location.href = "/Manager/Page/LinksPG.aspx?page=" + obj.curr + "&pagesize=" + obj.limit;
+                    location.href = "/Manager/Page/LinksListPG.aspx?page=" + obj.curr + "&pagesize=" + obj.limit;
                 }
             }
         });
