@@ -5,13 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
     <span style="font-size: 24px;">友情链接</span>
     <div style="float: right;">
-        <a href="javascript:abc();" class="layui-btn"><i class="layui-icon">&#xe608;</i>添加</a>
+        <a href="javascript:Add();" class="layui-btn"><i class="layui-icon">&#xe608;</i>新增</a>
     </div>
     <hr class="layui-bg-green">
 
     <table class="layui-table">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>标题</th>
                 <th>链接地址</th>
                 <th style="width: 150px; text-align: center;">操作</th>
@@ -21,11 +22,12 @@
             <asp:Repeater runat="server" ID="rptlist">
                 <ItemTemplate>
                     <tr>
+                        <td><%# Eval("Id") %></td>
                         <td><%# Eval("Title") %></td>
                         <td><%# Eval("LinkStr") %></td>
                         <td>
-                            <a href="javascript:" class="layui-btn layui-btn-sm "><i class="layui-icon">&#xe642;</i>编辑</a>
-                            <a href="javascript:"  class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon">&#xe640;</i>删除</a>
+                            <a href="javascript:Edit(<%# Eval("Id") %>);" class="layui-btn layui-btn-sm "><i class="layui-icon">&#xe642;</i>编辑</a>
+                            <a href="javascript:Delete(<%# Eval("Id") %>);" class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon">&#xe640;</i>删除</a>
                         </td>
                     </tr>
                 </ItemTemplate>
@@ -35,6 +37,11 @@
     <asp:HiddenField runat="server" ID="hfcount" />
     <div id="page"></div>
     <script type="text/javascript">
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
         var laypage = layui.laypage;
         laypage.render({
             elem: 'page'
@@ -58,18 +65,41 @@
         $(document).ready(function () {
 
         });
-        function GetQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]); return null;
+
+        function Add() {
+            location.href = "LinksPG.aspx?type=Add";
         }
-        function abc() {
-            layer.open({
-                title: '在线调试'
-                , content: '可以填写任意的layer代码'
-            }); 
+        function Edit(ID) {
+            location.href = "LinksPG.aspx?type=Edit&ID=" + ID;
+        }
+        function Delete(ID) {
+            layer.confirm('是否删除？', {
+                btn: ['确定', '取消'] //按钮
+            }, function () {
+                $.ajax({
+                    type: 'post',
+                    url: '../Ajax/AjaxTool.ashx',
+                    dataType: "text",
+                    data: {
+                        action: "DeleteLinksById",
+                        LinksId: ID
+                    },
+                    success: function (data) {
+                        if (data == "OK") {
+                            //layer.msg("删除成功");
+                            location.href = location.href;
+                        } else {
+                            layer.alert("删除失败");
+                        }
+                    },
+                    error: function () {
+                        layer.alert("出错了！请稍候再试！");
+                    }
+                });
+            }, function () {
+                
+            });
         }
     </script>
 </asp:Content>
-<%--<asp:Content ID="Content3" ContentPlaceHolderID="bottom" runat="server">
-</asp:Content>--%>
+

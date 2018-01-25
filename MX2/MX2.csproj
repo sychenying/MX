@@ -163,6 +163,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Ajax\AjaxTool.ashx.cs">
+      <DependentUpon>AjaxTool.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Dal\ArticleDal.cs" />
     <Compile Include="Manager\Dal\ArticleImgsDal.cs" />
     <Compile Include="Manager\Dal\ColumnDal.cs" />
@@ -226,6 +229,7 @@
     </Content>
     <Content Include="App_Data\tb.db" />
     <Content Include="Manager\Page\Site1.Master" />
+    <Content Include="Manager\Ajax\AjaxTool.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
