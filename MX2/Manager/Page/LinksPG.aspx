@@ -20,7 +20,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <asp:Button runat="server" ID="btnsave" Text="立即提交" CssClass="layui-btn" OnClick="btnsave_Click" />
+                <asp:Button runat="server" ID="btnsave" Text="确认提交" CssClass="layui-btn" OnClick="btnsave_Click" />
                 <a class="layui-btn layui-btn-primary" href="javascript:fanhui();" >返回</a>
             </div>
         </div>

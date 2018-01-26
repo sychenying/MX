@@ -172,6 +172,34 @@
     <Compile Include="Manager\Dal\ColumnImgsDal.cs" />
     <Compile Include="Manager\Dal\LinksDal.cs" />
     <Compile Include="Manager\Dal\UserDal.cs" />
+    <Compile Include="Manager\Page\ArticleListPG.aspx.cs">
+      <DependentUpon>ArticleListPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Page\ArticleListPG.aspx.designer.cs">
+      <DependentUpon>ArticleListPG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Page\ArticlePG.aspx.cs">
+      <DependentUpon>ArticlePG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Page\ArticlePG.aspx.designer.cs">
+      <DependentUpon>ArticlePG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Page\ColumnListPG.aspx.cs">
+      <DependentUpon>ColumnListPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Page\ColumnListPG.aspx.designer.cs">
+      <DependentUpon>ColumnListPG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Page\ColumnPG.aspx.cs">
+      <DependentUpon>ColumnPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Page\ColumnPG.aspx.designer.cs">
+      <DependentUpon>ColumnPG.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Page\LinksListPG.aspx.cs">
       <DependentUpon>LinksListPG.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,6 +247,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Manager\Page\ArticleListPG.aspx" />
+    <Content Include="Manager\Page\ArticlePG.aspx" />
+    <Content Include="Manager\Page\ColumnListPG.aspx" />
+    <Content Include="Manager\Page\ColumnPG.aspx" />
     <Content Include="Manager\Page\LinksListPG.aspx" />
     <Content Include="Manager\Page\LinksPG.aspx" />
     <Content Include="Manager\Page\test.aspx" />

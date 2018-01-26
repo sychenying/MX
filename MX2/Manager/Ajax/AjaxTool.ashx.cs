@@ -20,7 +20,10 @@ namespace MX2.Manager.Ajax
             {
                 switch (action)
                 {
-                    case "DeleteLinksById":
+                    case "DeleteArticleById":  // 删除文章/产品
+                        DeleteArticleById();
+                        break;
+                    case "DeleteLinksById":// 删除友情链接
                         DeleteLinksById();
                         break;
                     default:
@@ -34,7 +37,19 @@ namespace MX2.Manager.Ajax
             }
             context.Response.Write(result);
         }
-
+        private void DeleteArticleById()
+        {
+            long Id = Convert.ToInt64(HttpContext.Current.Request["ArticleId"]);
+            ArticleDal db = new ArticleDal();
+            if (db.Delete(Id))
+            {
+                result = "OK";
+            }
+            else
+            {
+                result = "NO";
+            }
+        }
         private void DeleteLinksById()
         {
             long Id = Convert.ToInt64(HttpContext.Current.Request["LinksId"]);
