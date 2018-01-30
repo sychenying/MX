@@ -24,6 +24,11 @@ namespace MX2.Manager.Page
             List<Article> list = new List<Article>();
             ArticleDal db = new ArticleDal();
             list = db.FindPagingList(ref pagecount, pageindex, pagesize);
+            if (list.Count == 0 && pageindex > 1)
+            {
+                //大于一页的最后一条被删除，页数-1 重新加载
+                list = db.FindPaging(ref pagecount, pageindex - 1, pagesize);
+            }
             hfcount.Value = pagecount.ToString();
             rptlist.DataSource = list;
             rptlist.DataBind();

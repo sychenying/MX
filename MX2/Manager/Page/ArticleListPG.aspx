@@ -13,7 +13,7 @@
             <tr>
                 <th>ID</th>
                 <th>标题</th>
-                <th>链接地址</th>
+                <th>添加时间</th>
                 <th style="width: 150px; text-align: center;">操作</th>
             </tr>
         </thead>
@@ -23,7 +23,7 @@
                     <tr>
                         <td><%# Eval("Id") %></td>
                         <td><%# Eval("Title") %></td>
-                        <td><%# Eval("LinkStr") %></td>
+                        <td><%# Eval("AddTime") %></td>
                         <td>
                             <a href="javascript:Edit(<%# Eval("Id") %>);" class="layui-btn layui-btn-sm "><i class="layui-icon">&#xe642;</i>编辑</a>
                             <a href="javascript:Delete(<%# Eval("Id") %>);" class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon">&#xe640;</i>删除</a>
