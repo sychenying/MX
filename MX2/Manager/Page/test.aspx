@@ -6,9 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="../../Scripts/layui/css/layui.css" rel="stylesheet" />
+    <script src="../../Scripts/layui/layui.all.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" >
         <div>
             <asp:GridView runat="server" ID="grid"></asp:GridView>
             <asp:TextBox runat="server" ID="txtid"></asp:TextBox><br/>
@@ -20,6 +22,7 @@
             <asp:GridView runat="server" ID="grid2"></asp:GridView>
             <asp:Button runat="server" ID="btnfy" Text="fenye" OnClick="btnfy_Click" />
         </div>
+        
     </form>
 </body>
 </html>

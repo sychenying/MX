@@ -87,7 +87,7 @@
                     dataType: "text",
                     data: {
                         action: "DeleteColumnById",
-                        LinksId: ID
+                        ColumnId: ID
                     },
                     success: function (data) {
                         if (data == "OK") {

@@ -93,6 +93,17 @@ namespace MX2.Manager.Dal
             return list;
         }
         /// <summary>
+        /// 查询栏目下文章/产品 数量
+        /// </summary>
+        /// <param name="CID"></param>
+        /// <returns></returns>
+        public int FindCountByCID(long CID)
+        {
+            string sqlstr2 = "SELECT count([Id]) FROM [tbl_Article] where [CID]=" + CID;
+            var res = Convert.ToInt32(DbHelperSQLite.GetSingle(sqlstr2));
+            return res;
+        }
+        /// <summary>
         /// 分页列表（无详情）
         /// </summary>
         /// <param name="pagecount">总数量</param>

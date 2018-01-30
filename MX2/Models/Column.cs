@@ -30,6 +30,6 @@ namespace MX2.Models
         /// <summary>
         /// 顺序
         /// </summary>
-        public int Orders { get; set; }
+        public long Orders { get; set; }
     }
 }

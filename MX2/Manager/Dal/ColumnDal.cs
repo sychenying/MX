@@ -85,6 +85,17 @@ namespace MX2.Manager.Dal
             return list;
         }
         /// <summary>
+        /// 查询子栏目数量
+        /// </summary>
+        /// <param name="PID"></param>
+        /// <returns></returns>
+        public int FindCountByPID(long PID)
+        {
+            string sqlstr2 = "SELECT count([Id]) FROM [tbl_Column] where [PID]=" + PID;
+            var res = Convert.ToInt32(DbHelperSQLite.GetSingle(sqlstr2));
+            return res;
+        }
+        /// <summary>
         /// 查询该栏目下所有子 孙栏目
         /// </summary>
         /// <param name="GID"></param>

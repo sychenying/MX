@@ -22,31 +22,31 @@ namespace MX2.Manager.Page {
         protected global::System.Web.UI.WebControls.TextBox txtbt;
         
         /// <summary>
-        /// TextBox2 控件。
+        /// ddlflm 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlflm;
         
         /// <summary>
-        /// txtdz 控件。
+        /// ddltype 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdz;
+        protected global::System.Web.UI.WebControls.DropDownList ddltype;
         
         /// <summary>
-        /// TextBox1 控件。
+        /// txtorders 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtorders;
         
         /// <summary>
         /// btnsave 控件。

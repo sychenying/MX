@@ -251,6 +251,7 @@
     <Content Include="Manager\Page\ArticlePG.aspx" />
     <Content Include="Manager\Page\ColumnListPG.aspx" />
     <Content Include="Manager\Page\ColumnPG.aspx" />
+    <Content Include="Manager\Page\HtmlPage1.html" />
     <Content Include="Manager\Page\LinksListPG.aspx" />
     <Content Include="Manager\Page\LinksPG.aspx" />
     <Content Include="Manager\Page\test.aspx" />

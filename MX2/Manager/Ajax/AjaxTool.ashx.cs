@@ -20,6 +20,9 @@ namespace MX2.Manager.Ajax
             {
                 switch (action)
                 {
+                    case "DeleteColumnById"://删除栏目
+                        DeleteColumnById();
+                        break;
                     case "DeleteArticleById":  // 删除文章/产品
                         DeleteArticleById();
                         break;
@@ -36,6 +39,31 @@ namespace MX2.Manager.Ajax
                 result = "err";
             }
             context.Response.Write(result);
+        }
+
+        private void DeleteColumnById()
+        {
+            long Id = Convert.ToInt64(HttpContext.Current.Request["ColumnId"]);
+            ColumnDal db = new ColumnDal();
+            int zlm = db.FindCountByPID(Id);
+            ArticleDal db2 = new ArticleDal();
+            int z2 = db2.FindCountByCID(Id);
+            if (zlm == 0 && z2 == 0)//是否有子栏目或者文章/产品
+            {
+                if (db.Delete(Id))
+                {
+                    result = "OK";
+                }
+                else
+                {
+                    result = "NO";
+                }
+            }
+            else
+            {
+                result = "NO";
+            }
+
         }
         private void DeleteArticleById()
         {
