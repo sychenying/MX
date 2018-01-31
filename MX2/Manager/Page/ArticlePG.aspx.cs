@@ -35,11 +35,12 @@ namespace MX2.Manager.Page
                 var item = db.Find(Id);
                 if (item != null)
                 {
-                    //txtbt.Text = item.Title;
-                    //txtorders.Text = item.Orders.ToString();
-                    //if (item.PID > 0)
-                    //    ddllm.SelectedValue = item.PID.ToString();
-                    //ddllm.SelectedValue = item.Type;
+                    txtbt.Text = item.Title;
+                    txtimg.Text = item.ImgStr;
+                    txtbz.Text = item.ShortTxt;
+                    txtnr.Text = item.Content;
+                    ddllm.SelectedValue = item.CID.ToString();
+                                      
                 }
                 else
                 {
@@ -53,34 +54,25 @@ namespace MX2.Manager.Page
         {
             if (Request["type"] == "Edit")
             {
-                //long Id = Convert.ToInt64(Request["ID"]);
-                //var item = db.Find(Id);
-                //if (item != null)
-                //{
-                //    item.Title = txtbt.Text;
-                //    item.Orders = Convert.ToInt32(txtorders.Text);
-                //    item.Type = ddltype.SelectedValue;
-                //    item.PID = ddlflm.SelectedValue != "" ? Convert.ToInt64(ddlflm.SelectedValue) : 0;
-                //    if (item.PID > 0)
-                //    {
-                //        var Pitem = db.Find(item.PID);
-                //        item.GID = Pitem.GID == 0 ? Pitem.ID : Pitem.GID;
-                //    }
-                //    else
-                //    {
-                //        item.GID = 0;
-                //    }
-
-                //    if (db.Edit(item))
-                //        Page.ClientScript.RegisterStartupScript(GetType(), "e1", "edOK();", true);
-                //    else
-                //        Page.ClientScript.RegisterStartupScript(GetType(), "e2", "layer.alert('修改失败');", true);
-                //}
-                //else
-                //{
-                //    //找不到数据就返回列表
-                //    Response.Redirect("LinksListPG.aspx");
-                //}
+                long Id = Convert.ToInt64(Request["ID"]);
+                var item = db.Find(Id);
+                if (item != null)
+                {                  
+                    item.Title = txtbt.Text;
+                    item.ImgStr = txtimg.Text;
+                    item.ShortTxt = txtbz.Text;
+                    item.Content = txtnr.Text;
+                    item.CID = Convert.ToInt64(ddllm.SelectedValue);
+                    if (db.Edit(item))
+                        Page.ClientScript.RegisterStartupScript(GetType(), "e1", "edOK();", true);
+                    else
+                        Page.ClientScript.RegisterStartupScript(GetType(), "e2", "layer.alert('修改失败');", true);
+                }
+                else
+                {
+                    //找不到数据就返回列表
+                    Response.Redirect("LinksListPG.aspx");
+                }
             }
             else
             {
@@ -94,7 +86,7 @@ namespace MX2.Manager.Page
                 item.Clicks = 1;
                 item.CID = Convert.ToInt64(ddllm.SelectedValue);
 
-                
+
                 if (db.Add(item))
                     Page.ClientScript.RegisterStartupScript(GetType(), "a1", "adOK()", true);
                 else

@@ -166,6 +166,9 @@
     <Compile Include="Manager\Ajax\AjaxTool.ashx.cs">
       <DependentUpon>AjaxTool.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Ajax\UploadTool.ashx.cs">
+      <DependentUpon>UploadTool.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Dal\ArticleDal.cs" />
     <Compile Include="Manager\Dal\ArticleImgsDal.cs" />
     <Compile Include="Manager\Dal\ColumnDal.cs" />
@@ -228,10 +231,13 @@
     <Compile Include="Manager\Page\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Sys\CacheHelper.cs" />
     <Compile Include="Manager\Sys\CookieHelper.cs" />
     <Compile Include="Manager\Sys\DbHelperSQLite.cs" />
+    <Compile Include="Manager\Sys\FTRequest.cs" />
     <Compile Include="Manager\Sys\ModelHelper.cs" />
     <Compile Include="Manager\Sys\SysConstant.cs" />
+    <Compile Include="Manager\Sys\Thumbnail.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleImgs.cs" />
     <Compile Include="Models\Column.cs" />
@@ -263,6 +269,7 @@
     <Content Include="App_Data\tb.db" />
     <Content Include="Manager\Page\Site1.Master" />
     <Content Include="Manager\Ajax\AjaxTool.ashx" />
+    <Content Include="Manager\Ajax\UploadTool.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
