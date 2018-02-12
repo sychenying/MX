@@ -141,12 +141,11 @@ namespace MX2.Manager.Sys
         /// <returns></returns>
         private static Size ResizeImage(int width, int height, int maxWidth, int maxHeight)
         {
-            //此次2012-02-05修改过=================
+            
             if (maxWidth <= 0)
                 maxWidth = width;
             if (maxHeight <= 0)
-                maxHeight = height;
-            //以上2012-02-05修改过=================
+                maxHeight = height;            
             decimal MAX_WIDTH = (decimal)maxWidth;
             decimal MAX_HEIGHT = (decimal)maxHeight;
             decimal ASPECT_RATIO = MAX_WIDTH / MAX_HEIGHT;

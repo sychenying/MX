@@ -36,7 +36,7 @@ namespace MX2.Manager.Page
                 if (item != null)
                 {
                     txtbt.Text = item.Title;
-                    txtimg.Text = item.ImgStr;
+                    img1.ImageUrl = item.ImgStr;
                     txtbz.Text = item.ShortTxt;
                     txtnr.Text = item.Content;
                     ddllm.SelectedValue = item.CID.ToString();
@@ -59,7 +59,7 @@ namespace MX2.Manager.Page
                 if (item != null)
                 {                  
                     item.Title = txtbt.Text;
-                    item.ImgStr = txtimg.Text;
+                    item.ImgStr = hfimg.Value;
                     item.ShortTxt = txtbz.Text;
                     item.Content = txtnr.Text;
                     item.CID = Convert.ToInt64(ddllm.SelectedValue);
@@ -78,7 +78,7 @@ namespace MX2.Manager.Page
             {
                 Models.Article item = new Models.Article();
                 item.Title = txtbt.Text;
-                item.ImgStr = txtimg.Text;
+                item.ImgStr = hfimg.Value;
                 item.ProductTxt = "";
                 item.ShortTxt = txtbz.Text;
                 item.Content = txtnr.Text;

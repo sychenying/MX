@@ -17,13 +17,13 @@ namespace MX2.Manager.Ajax
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+            UpLoadFile(context);
         }
         #region 上传文件处理===================================
         private void UpLoadFile(HttpContext context)
         {
             string _delfile = FTRequest.GetString("DelFilePath");
-            HttpPostedFile _upfile = context.Request.Files["Filedata"];
+            HttpPostedFile _upfile = context.Request.Files["file"];
             bool _iswater = false; //默认不打水印
             bool _isthumbnail = false; //默认不生成缩略图
 
@@ -33,7 +33,7 @@ namespace MX2.Manager.Ajax
                 _isthumbnail = true;
             if (_upfile == null)
             {
-                context.Response.Write("{\"status\": 0, \"msg\": \"请选择要上传文件！\"}");
+                context.Response.Write("{\"code\": -1, \"msg\": \"请选择要上传文件！\"}");
                 return;
             }
             
@@ -100,12 +100,12 @@ namespace MX2.Manager.Ajax
                 //检查文件扩展名是否合法
                 if (!CheckFileExt(fileExt))
                 {
-                    return "{\"status\": 0, \"msg\": \"不允许上传" + fileExt + "类型的文件！\"}";
+                    return "{\"code\": -1, \"msg\": \"不允许上传" + fileExt + "类型的文件！\"}";
                 }
                 //检查文件大小是否合法
                 if (!CheckFileSize(fileExt, fileSize))
                 {
-                    return "{\"status\": 0, \"msg\": \"文件超过限制的大小啦！\"}";
+                    return "{\"code\": -1, \"msg\": \"文件超过限制的大小啦！\"}";
                 }
                 //检查上传的物理路径是否存在，不存在则创建
                 if (!Directory.Exists(fullUpLoadPath))
@@ -142,13 +142,15 @@ namespace MX2.Manager.Ajax
                 //    }
                 //}
                 //处理完毕，返回JOSN格式的文件信息
-                return "{\"status\": 1, \"msg\": \"上传文件成功！\", \"name\": \""
-                    + fileName + "\", \"path\": \"" + newFilePath + "\", \"thumb\": \""
-                    + newThumbnailPath + "\", \"size\": " + fileSize + ", \"ext\": \"" + fileExt + "\"}";
+                //return "{\"status\": 1, \"msg\": \"上传文件成功！\", \"name\": \""
+                //    + fileName + "\", \"path\": \"" + newFilePath + "\", \"thumb\": \""
+                //    + newThumbnailPath + "\", \"size\": " + fileSize + ", \"ext\": \"" + fileExt + "\"}";
+                return "{\"code\": 0, \"msg\": \"上传文件成功！\", \"data\": {\"src\":\""+ newFilePath + "\",\"title\":\""+ fileName + "\",\"thumb\":\""+ newThumbnailPath + "\",\"size\":\"" + fileSize + "\",\"thumb\":\"" + newThumbnailPath + "\",\"ext\":\"" + fileExt + "\"}}";
+                
             }
             catch
             {
-                return "{\"status\": 0, \"msg\": \"上传过程中发生意外错误！\"}";
+                return "{\"code\": -1, \"msg\": \"上传过程中发生意外错误！\"}";
             }
         }
         #region 私有方法

@@ -91,7 +91,7 @@ namespace MX2.Manager.Sys
         {
             return HttpContext.Current.Request.Url.DnsSafeHost;
         }
-       
+
 
         /// <summary>
         /// 获取当前请求的原始 URL(URL 中域信息之后的部分,包括查询字符串(如果存在))
@@ -339,7 +339,7 @@ namespace MX2.Manager.Sys
         {
             return GetString(strName, false);
         }
-        
+
 
         /// <summary>
         /// 获得Url或表单参数的值, 先判断Url参数是否为空字符串, 如为True则返回表单参数的值
@@ -371,23 +371,23 @@ namespace MX2.Manager.Sys
             else
                 return GetQueryStringValue(strName, defaultvalue);
         }
-     
+
 
         /// <summary>
         /// 获得当前页面客户端的IP
         /// </summary>
         /// <returns>当前页面客户端的IP</returns>
-        public static string GetIP()
-        {
-            string result = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; GetDnsRealHost();
-            if (string.IsNullOrEmpty(result))
-                result = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-            if (string.IsNullOrEmpty(result))
-                result = HttpContext.Current.Request.UserHostAddress;
-            if (string.IsNullOrEmpty(result) || !SysConstant.IsIP(result))
-                return "127.0.0.1";
-            return result;
-        }
+        //public static string GetIP()
+        //{
+        //    string result = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; GetDnsRealHost();
+        //    if (string.IsNullOrEmpty(result))
+        //        result = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+        //    if (string.IsNullOrEmpty(result))
+        //        result = HttpContext.Current.Request.UserHostAddress;
+        //    if (string.IsNullOrEmpty(result) || !SysConstant.IsIP(result))
+        //        return "127.0.0.1";
+        //    return result;
+        //}
 
     }
 }

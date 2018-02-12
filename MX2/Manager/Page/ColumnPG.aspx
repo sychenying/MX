@@ -63,10 +63,10 @@
             location.href = "ColumnListPG.aspx";
         }
         function load() {
-            if (GetQueryString("type") == "Add") {
-                $("#spbt").html("新增栏目");
-            } else {
+            if (GetQueryString("type") == "Edit") {
                 $("#spbt").html("编辑栏目");
+            } else {
+                $("#spbt").html("新增栏目");
             }
         }
         function edOK() {

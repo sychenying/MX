@@ -49,13 +49,22 @@ namespace MX2.Manager.Page {
         protected global::System.Web.UI.WebControls.TextBox txtnr;
         
         /// <summary>
-        /// txtimg 控件。
+        /// img1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtimg;
+        protected global::System.Web.UI.WebControls.Image img1;
+        
+        /// <summary>
+        /// hfimg 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfimg;
         
         /// <summary>
         /// btnsave 控件。

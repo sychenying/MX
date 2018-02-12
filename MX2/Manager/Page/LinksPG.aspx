@@ -39,10 +39,10 @@
             location.href = "LinksListPG.aspx";
         }
         function load() {
-            if (GetQueryString("type") == "Add") {
-                $("#spbt").html("新增链接");
-            } else {
+            if (GetQueryString("type") == "Edit") {
                 $("#spbt").html("编辑链接");
+            } else {
+                $("#spbt").html("新增链接");
             }
         }
         function edOK() {
