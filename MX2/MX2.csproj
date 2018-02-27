@@ -231,6 +231,20 @@
     <Compile Include="Manager\Page\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Page\UserListPG.aspx.cs">
+      <DependentUpon>UserListPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Page\UserListPG.aspx.designer.cs">
+      <DependentUpon>UserListPG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Page\UserPG.aspx.cs">
+      <DependentUpon>UserPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Page\UserPG.aspx.designer.cs">
+      <DependentUpon>UserPG.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Sys\CacheHelper.cs" />
     <Compile Include="Manager\Sys\CookieHelper.cs" />
     <Compile Include="Manager\Sys\DbHelperSQLite.cs" />
@@ -261,6 +275,8 @@
     <Content Include="Manager\Page\LinksListPG.aspx" />
     <Content Include="Manager\Page\LinksPG.aspx" />
     <Content Include="Manager\Page\test.aspx" />
+    <Content Include="Manager\Page\UserListPG.aspx" />
+    <Content Include="Manager\Page\UserPG.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

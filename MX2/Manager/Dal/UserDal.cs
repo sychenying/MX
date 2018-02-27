@@ -13,12 +13,20 @@ namespace MX2.Manager.Dal
     /// </summary>
     public class UserDal
     {
-        public bool Login(string UserName, string PassWord)
+        public User Login(string UserName, string PassWord)
         {
             var pwd = SysConstant.GetMD5(PassWord);//密码加密
-            string sqlstr = "SELECT count([Id]) FROM [tbl_User] where [UserName]=" + UserName + " and [PassWord]=" + pwd;
-            int res = Convert.ToInt32(DbHelperSQLite.GetSingle(sqlstr));
-            return res > 0;
+            string sqlstr = "SELECT [Id],[UserName],[PassWord],[States] FROM [tbl_User] where [UserName]=" + UserName + " and [PassWord]=" + pwd;
+            DataSet ds = DbHelperSQLite.Query(sqlstr);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                var res = ModelHelper.DataRowToModel<User>(ds.Tables[0].Rows[0]);
+                return res;
+            }
+            else
+            {
+                return null;
+            }           
         }
 
         public bool Add(User item)

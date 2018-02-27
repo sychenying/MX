@@ -63,7 +63,7 @@
                             <a href="javascript:;">系统管理</a>
                             <dl class="layui-nav-child">
                                 <dd><a href="ColumnListPG.aspx"><i class="layui-icon">&#xe63c;</i>栏目管理</a></dd>
-                                <dd><a href="javascript:;"><i class="layui-icon">&#xe612;</i>用户管理</a></dd>
+                                <dd><a href="UserListPG.aspx"><i class="layui-icon">&#xe612;</i>用户管理</a></dd>
                                 <dd><a href="javascript:;"><i class="layui-icon">&#xe62c;</i>网站设置</a></dd>
                                 <dd><a href=""><i class="layui-icon">&#xe614;</i>管理密码</a></dd>
                             </dl>

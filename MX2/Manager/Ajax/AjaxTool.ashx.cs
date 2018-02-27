@@ -29,6 +29,9 @@ namespace MX2.Manager.Ajax
                     case "DeleteLinksById":// 删除友情链接
                         DeleteLinksById();
                         break;
+                    case "DeleteUserById"://删除用户
+                        DeleteUserById();
+                        break;
                     default:
                         err();
                         break;
@@ -40,7 +43,7 @@ namespace MX2.Manager.Ajax
             }
             context.Response.Write(result);
         }
-
+        //删除栏目
         private void DeleteColumnById()
         {
             long Id = Convert.ToInt64(HttpContext.Current.Request["ColumnId"]);
@@ -65,6 +68,7 @@ namespace MX2.Manager.Ajax
             }
 
         }
+        //删除文章/商品
         private void DeleteArticleById()
         {
             long Id = Convert.ToInt64(HttpContext.Current.Request["ArticleId"]);
@@ -78,10 +82,25 @@ namespace MX2.Manager.Ajax
                 result = "NO";
             }
         }
+        //删除链接
         private void DeleteLinksById()
         {
             long Id = Convert.ToInt64(HttpContext.Current.Request["LinksId"]);
             LinksDal db = new LinksDal();
+            if (db.Delete(Id))
+            {
+                result = "OK";
+            }
+            else
+            {
+                result = "NO";
+            }
+        }
+        //删除用户
+        private void DeleteUserById()
+        {
+            long Id = Convert.ToInt64(HttpContext.Current.Request["UserId"]);
+            UserDal db = new UserDal();
             if (db.Delete(Id))
             {
                 result = "OK";
